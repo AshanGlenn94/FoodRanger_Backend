@@ -8,3 +8,10 @@ A user can see details about a restaurant which includes:
 • User Review with Rating
 
 For things like ordering food and reviewing, users can register on the web application.
+
+The entities/models in the system:
+• User
+• Restaurant
+• Review
+• Order
+
