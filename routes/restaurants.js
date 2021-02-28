@@ -6,11 +6,10 @@ const Restaurant = require('../models/Restaurant');
 router.post('/', async (req, res) => {
   const restaurant = new Restaurant({
     name: req.body.name,
-    location: req.body.location,
-    foodMenu: req.body.foodMenu,
-    userReview: req.body.userReview,
-    userRating: req.body.userRating,
-    image: req.body.image,
+    address: req.body.address,
+    bannerImage: req.body.bannerImage,
+    menu: req.body.menu,
+    rating: req.body.rating,
   });
 
   try {
@@ -32,11 +31,9 @@ router.get('/', async (req, res) => {
 });
 
 //  Get Specific Data
-router.get('/:restaurantID', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const specificRestaurant = await Restaurant.findById(
-      req.params.restaurantID
-    );
+    const specificRestaurant = await Restaurant.findById(req.params.id);
     res.json(specificRestaurant);
   } catch (error) {
     res.json(console.log(error));
@@ -44,10 +41,10 @@ router.get('/:restaurantID', async (req, res) => {
 });
 
 //  Delete specific data
-router.delete('/:restaurantID', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const deleteRestaurant = await Restaurant.remove({
-      _id: req.params.restaurantID,
+      _id: req.params.id,
     });
     res.json(deleteRestaurant);
   } catch (error) {
@@ -56,10 +53,10 @@ router.delete('/:restaurantID', async (req, res) => {
 });
 
 // Update a specific data
-router.patch('/:restaurantID', async (req, res) => {
+router.patch('/:id', async (req, res) => {
   try {
     const updateRestaurant = await Restaurant.updateOne(
-      { _id: req.params.restaurantID },
+      { _id: req.params.id },
       { $set: { userRating: req.body.userRating } }
     );
     res.json(updateRestaurant);

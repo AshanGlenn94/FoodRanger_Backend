@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Auth = require('../models/Auth');
+const Auth = require('../models/User');
 
 //register user
 router.post('/register', async (req, res) => {
@@ -39,9 +39,9 @@ router.get('/users', async (req, res) => {
   }
 });
 
-router.get('/users/:userID', async (req, res) => {
+router.get('/users/:id', async (req, res) => {
   try {
-    const specificUser = await Auth.findById(req.params.userID);
+    const specificUser = await Auth.findById(req.params.id);
     res.json(specificUser);
   } catch (error) {
     res.json(console.log(error));
