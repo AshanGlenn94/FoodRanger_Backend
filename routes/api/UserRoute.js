@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 
-const User = require("../models/User");
+const User = require("../../models/User");
 
 // Register user
 router.post("/auth/register", async (req, res) => {
@@ -71,3 +71,4 @@ router.post("/auth/login", async (req, res) => {
 
 // Get user info
 //New change
+module.exports = router;
