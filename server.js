@@ -20,8 +20,8 @@ app.use(express.json());
 //Use routes
 // app.use("/order", require("./routes/OrderRoute"));
 // app.use("/restaurant", require("./routes/RestaurantRoute"));
-app.use("api/review", require("./routes/api/ReviewRoute"));
-app.use("api/user", require("./routes/api/UserRoute"));
+app.use("/api/review", require("./routes/api/ReviewRoute"));
+app.use("/api/user", require("./routes/api/UserRoute"));
 
 //Start Server and listen to PORT
 app.listen(5000, () => console.log(`Server is listning on port 5000...`));

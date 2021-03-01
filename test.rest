@@ -1,0 +1,40 @@
+
+POST http://localhost:5000/api/user/auth/register
+Content-Type: application/json
+
+{
+    "fname": "Ashan",
+    "lname": "Glenn",
+    "address": {
+    	"line1": "2623 Deloak Dr",
+    	"line2": "Apt A",
+    	"city": "Saint Louis",
+    	"zipCode": 63129
+    },
+    "email": "ashan@gmail.com",
+    "password": "abc123"
+}
+
+###
+POST http://localhost:5000/api/user/auth/login
+Content-Type: application/json
+
+{
+    "email": "ashan@gmail.com",
+    "password": "abc123"
+}
+
+###
+POST http://localhost:5000/api/review/restaurants/:id/reviews
+Content-Type: application/json
+
+{
+  "name": "Ashan",
+  "email": "ashan@gmail.com",
+  "restaurant": "Restaurant 1",
+  "rating": 4,
+  "comment": "Good Restaurant"
+}
+
+###
+GET http://localhost:5000/api/review/restaurants/603c7290d4df98f8c85fba89/reviews

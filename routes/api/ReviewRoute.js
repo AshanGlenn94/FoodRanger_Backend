@@ -7,6 +7,7 @@ router.post("/restaurants/:id/reviews", async (req, res) => {
   const review = new Review({
     name: req.body.name,
     email: req.body.email,
+    restaurant: req.body.restaurant,
     rating: req.body.rating,
     comment: req.body.comment,
   });
