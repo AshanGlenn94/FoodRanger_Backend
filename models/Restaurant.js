@@ -6,20 +6,12 @@ const restaurantSchema = new mongoose.Schema({
     required: true,
   },
   address: {
-    line1: {
-      type: String,
-      required: true,
-    },
-    line2: {
-      type: Number,
-      required: false,
-    },
     city: {
       type: String,
       required: true,
     },
-    zipCode: {
-      type: Number,
+    state: {
+      type: String,
       required: true,
     },
   },
@@ -28,14 +20,19 @@ const restaurantSchema = new mongoose.Schema({
     required: true,
   },
   menu: {
-    name: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: false,
-    },
+    type: [
+      {
+        name: {
+          type: String,
+          required: true,
+        },
+        price: {
+          type: Number,
+          required: false,
+        },
+      },
+    ],
+    required: true,
   },
   rating: {
     type: Number,
@@ -43,7 +40,6 @@ const restaurantSchema = new mongoose.Schema({
   },
   dateAdded: {
     type: Date,
-    required: true,
     default: Date.now,
   },
 });

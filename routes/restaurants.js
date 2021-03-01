@@ -11,7 +11,6 @@ router.post('/', async (req, res) => {
     menu: req.body.menu,
     rating: req.body.rating,
   });
-
   try {
     const savedRestaurant = await restaurant.save();
     res.json(savedRestaurant);

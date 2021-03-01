@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 
 dotenv.config();
 //import routes
-const authRoute = require('./routes/auth');
+const authRoute = require('./routes/users');
 const restaurantRoute = require('./routes/restaurants');
 
 // connect to db
